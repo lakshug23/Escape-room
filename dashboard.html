@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mission Control — The Upside Protocol</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="timer">⏱ --:--</div>
+
+  <div class="container">
+
+    <p class="stage-label">// MISSION CONTROL TERMINAL //</p>
+
+    <h2>MISSION STATUS</h2>
+
+    <hr class="divider" />
+
+    <!-- Step list -->
+    <div class="step-list">
+
+      <div class="step-row" id="step1">
+        <span class="checkbox">[ ]</span>
+        <span class="step-label">Decode Signal Distortion</span>
+      </div>
+
+      <div class="step-row" id="step2">
+        <span class="checkbox">[ ]</span>
+        <span class="step-label">Unlock Physical Security Box</span>
+      </div>
+
+      <div class="step-row" id="step3">
+        <span class="checkbox">[ ]</span>
+        <span class="step-label">Recover External Drive</span>
+      </div>
+
+      <div class="step-row" id="step4">
+        <span class="checkbox">[ ]</span>
+        <span class="step-label">Decode Morse Transmission</span>
+      </div>
+
+      <div class="step-row" id="step5">
+        <span class="checkbox">[ ]</span>
+        <span class="step-label">Breach Final Gate</span>
+      </div>
+
+    </div>
+
+    <hr class="divider" />
+
+    <!-- Action buttons — exactly one visible at a time -->
+    <div class="action-row">
+
+      <!-- Step 1 & 2: go solve the signal puzzle -->
+      <button id="btnGoClue1"
+              onclick="window.location.href='clue1.html'">
+        INVESTIGATE SIGNAL DISTORTION
+      </button>
+
+      <!-- Step 3: physical drive confirmation -->
+      <button id="btnConfirmDrive"
+              style="display:none"
+              onclick="confirmDrive()">
+        CONFIRM DRIVE RECOVERED
+      </button>
+
+      <!-- Step 4: morse puzzle -->
+      <button id="btnGoMorse"
+              style="display:none"
+              onclick="window.location.href='morse.html'">
+        DECODE MORSE TRANSMISSION
+      </button>
+
+      <!-- Step 5: breach terminal -->
+      <button id="btnGoBreach"
+              style="display:none"
+              onclick="window.location.href='breach.html'">
+        ACCESS BREACH TERMINAL
+      </button>
+
+      <!-- All done -->
+      <p id="msgMissionDone"
+         class="msg success mission-done-msg"
+         style="display:none">
+        ✔ ALL PROTOCOLS COMPLETE — MISSION SUCCESSFUL
+      </p>
+
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    function confirmDrive() {
+      markStep(3);
+      refreshDashboard();
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      refreshDashboard();
+    });
+  </script>
+
+</body>
+</html>

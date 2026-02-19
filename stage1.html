@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stage 1 — The Upside Protocol</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="timer">⏱ --:--</div>
+
+  <div class="container">
+
+    <p class="stage-label">// STAGE 01 OF 03 — SIGNAL INVERSION //</p>
+
+    <h2>DECODING REQUIRED</h2>
+
+    <hr class="divider" />
+
+    <div class="puzzle-display">
+      ETAG EHT DNUOF
+    </div>
+
+    <p class="clue">
+      &gt; In this dimension, signals invert.
+    </p>
+
+    <hr class="divider" />
+
+    <div class="input-group">
+      <input
+        type="text"
+        id="answer1"
+        placeholder="ENTER DECODED PHRASE"
+        autocomplete="off"
+        spellcheck="false"
+      />
+      <button
+        class="verify-btn"
+        onclick="checkAnswer('answer1', 'msg1', 'FOUND THE GATE', 'stage2.html')"
+      >
+        VERIFY
+      </button>
+    </div>
+
+    <span id="msg1" class="msg"></span>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

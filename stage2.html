@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stage 2 — The Upside Protocol</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="timer">⏱ --:--</div>
+
+  <div class="container">
+
+    <p class="stage-label">// STAGE 02 OF 03 — CIPHER BREAK //</p>
+
+    <h2>ACCESS KEY INTERCEPTED</h2>
+
+    <hr class="divider" />
+
+    <div class="puzzle-display">
+      ACCESS_KEY = P0RT4L
+    </div>
+
+    <p class="clue">
+      &gt; Numbers replaced what once were letters.
+    </p>
+
+    <hr class="divider" />
+
+    <div class="input-group">
+      <input
+        type="text"
+        id="answer2"
+        placeholder="ENTER ORIGINAL WORD"
+        autocomplete="off"
+        spellcheck="false"
+      />
+      <button
+        class="verify-btn"
+        onclick="checkAnswer('answer2', 'msg2', 'PORTAL', 'stage3.html')"
+      >
+        VERIFY
+      </button>
+    </div>
+
+    <span id="msg2" class="msg"></span>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

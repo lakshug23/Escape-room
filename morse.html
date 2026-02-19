@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Morse Decoder — The Upside Protocol</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="timer">⏱ --:--</div>
+
+  <div class="container">
+
+    <p class="stage-label">// MORSE TRANSMISSION UNIT — TASK 4 //</p>
+
+    <h2>INCOMING TRANSMISSION</h2>
+
+    <hr class="divider" />
+
+    <hr class="divider" />
+
+    <div class="input-group">
+      <input
+        type="text"
+        id="answerMorse"
+        placeholder="ENTER DECODED PASSWORD"
+        autocomplete="off"
+        spellcheck="false"
+      />
+      <button
+        class="verify-btn"
+        onclick="checkAnswer('answerMorse', 'msgMorse', 'MAIN GATE', onMorseCorrect)"
+      >
+        VERIFY
+      </button>
+    </div>
+
+    <span id="msgMorse" class="msg"></span>
+
+    <!-- Shown after correct answer -->
+    <div id="laptopSection" style="display:none">
+      <hr class="divider" />
+      <div class="physical-note">
+        <p>✔ TRANSMISSION DECODED</p>
+        <p>Proceed to the next step.</p>
+      </div>
+      <button style="margin-top:16px" onclick="confirmLaptop()">
+        CONFIRM LAPTOP ACCESSED
+      </button>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    function onMorseCorrect() {
+      markStep(4);
+      document.getElementById("laptopSection").style.display = "block";
+    }
+
+    function confirmLaptop() {
+      window.location.href = "breach.html";
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Breach Terminal — The Upside Protocol</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="timer">⏱ --:--</div>
+
+  <div class="container">
+
+    <p class="stage-label">// FINAL BREACH TERMINAL — TASK 5 //</p>
+
+    <!-- Access confirmation header -->
+    <div class="access-granted-header">
+      <h2>ACCESS GRANTED</h2>
+      <p>External drive detected.</p>
+    </div>
+
+    <hr class="divider" />
+
+    <p>To seal the portal, execute the shutdown sequence.</p>
+
+    <button id="executeBtn" onclick="executeShutdown()">
+      EXECUTE SHUTDOWN
+    </button>
+
+    <!-- Animated lines injected here -->
+    <div id="breachOutput" class="breach-output"></div>
+
+    <!-- Final success — revealed after animation -->
+    <div id="finalSuccess" class="final-success">
+      <p>▓ SYSTEM RESTORED</p>
+      <p>▓ PORTAL SEALED</p>
+      <p>▓ ACCESS COMPLETE</p>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    function executeShutdown() {
+      document.getElementById("executeBtn").style.display = "none";
+
+      runBreachSequence(function () {
+        markStep(5);
+
+        // Show final success block
+        var success = document.getElementById("finalSuccess");
+        if (success) success.style.display = "flex";
+
+        // Stop the timer
+        localStorage.removeItem("upsideEndTime");
+        var timerEl = document.getElementById("timer");
+        if (timerEl) timerEl.textContent = "⏱ 00:00";
+      });
+    }
+  </script>
+
+</body>
+</html>

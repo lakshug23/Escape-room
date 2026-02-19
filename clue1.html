@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Signal Decoder — The Upside Protocol</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="timer">⏱ --:--</div>
+
+  <div class="container">
+
+    <p class="stage-label">// SIGNAL ANALYSIS TERMINAL — TASK 1 //</p>
+
+    <h2>DISTORTED TRANSMISSION INTERCEPTED</h2>
+
+    <hr class="divider" />
+
+    <div class="puzzle-display" style="font-size:.95rem; line-height:2.2; letter-spacing:3px;">
+      01101110 01101111 01100111 01100001 01110010<br>
+      01100111 01101111 01101101 01100101 01100100
+    </div>
+
+    <hr class="divider" />
+
+    <div class="input-group">
+      <input
+        type="text"
+        id="answer1"
+        placeholder="ENTER DECODED TEXT"
+        autocomplete="off"
+        spellcheck="false"
+      />
+      <button
+        class="verify-btn"
+        onclick="checkAnswer('answer1', 'msg1', 'Demogragon', onClue1Correct)"
+      >
+        VERIFY
+      </button>
+    </div>
+
+    <span id="msg1" class="msg"></span>
+
+    <!-- Shown after correct answer -->
+    <div id="physicalSection" style="display:none">
+      <hr class="divider" />
+      <div class="physical-note">
+        <p>✔ CODE VERIFIED</p>
+        <p>Proceed to the next step.</p>
+      </div>
+      <button style="margin-top:16px" onclick="markBoxOpened()">
+        MARK BOX AS OPENED
+      </button>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    function onClue1Correct() {
+      markStep(1);
+      document.getElementById("physicalSection").style.display = "block";
+    }
+
+    function markBoxOpened() {
+      markStep(2);
+      window.location.href = "dashboard.html";
+    }
+  </script>
+
+</body>
+</html>

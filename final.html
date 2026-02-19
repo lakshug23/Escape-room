@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Protocol Complete — The Upside Protocol</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="timer">⏱ --:--</div>
+
+  <div class="container">
+
+    <p class="stage-label">// PROTOCOL TERMINAL — FINAL SEQUENCE //</p>
+
+    <h1>SHUTDOWN SEQUENCE<br>READY</h1>
+
+    <hr class="divider" />
+
+    <p>All breach signals have been decoded.<br>
+    Initiate the final seal to restore the system.</p>
+
+    <hr class="divider" />
+
+    <!-- Seal button — hidden after activation -->
+    <button id="sealBtn" onclick="sealPortal()">SEAL PORTAL</button>
+
+    <!-- Success output — shown after button press -->
+    <div id="finalOutput" class="final-output">
+      <p>▓ SYSTEM RESTORED</p>
+      <p>▓ PORTAL SEALED</p>
+      <p>▓ ACCESS GRANTED</p>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    function sealPortal() {
+      document.getElementById("sealBtn").style.display = "none";
+      document.getElementById("finalOutput").classList.add("visible");
+      // Clear the timer so it stops ticking
+      localStorage.removeItem("upsideEndTime");
+      document.getElementById("timer").textContent = "⏱ 00:00";
+      document.getElementById("timer").classList.remove("warning");
+    }
+  </script>
+</body>
+</html>
