@@ -7,7 +7,7 @@
   "use strict";
 
   /* ── Constants ──────────────────────────────── */
-  const TOTAL_SECONDS  = 45 * 60;
+  const TOTAL_SECONDS  = 20 * 60;
   const TIMER_KEY      = "upsideEndTime";
   const WARN_THRESHOLD = 5 * 60;
   const FAIL_PAGE      = "fail.html";
